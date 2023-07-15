@@ -10,7 +10,6 @@ import { Container, Grid } from '@mui/material';
 import Image from "./../../Assets/Images/user-1.jpg";
 import { db } from './../../Utils/Firebase';
 import { onValue, ref } from 'firebase/database';
-import SearchBar from '../Searchbar';
 import PrintPage from '../Print-page';
 
 

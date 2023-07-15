@@ -11,9 +11,18 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     section: {
-        margin: 10,
-        padding: 10,
+        margin: 30,
+        padding: "100px 20px",
         flexGrow: 1,
+        backgroundColor: '#f9f0ff',
+        borderRadius: "15px",
+    },
+    bg: {
+        backgroundColor: "red",
+        height: "100px",
+        width: "100px",
+        borderRadius: "50%",
+        margin: "0 auto 20px",
     },
     name: {
         fontSize: "32px",
@@ -38,14 +47,13 @@ const styles = StyleSheet.create({
 const MyDocument = ({ name, position, message, image }) => (
     <Document>
         <Page size="A4" style={styles.page}>
-            <View>
-                {/* <Image src={image} cache={false} style={styles.image} /> */}
-                <View style={styles.section}>
-                    <Text style={styles.name}>{name}</Text>
-                    <Text style={styles.position}>{position}</Text>
-                    <Text style={styles.message}>{message}</Text>
-                </View>
-                {/* <Image src={image} style={styles.image} cache={false} /> */}
+            <View style={styles.section}>
+                <Image src={image} />
+                <Text style={styles.bg}>
+                </Text>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.position}>{position}</Text>
+                <Text style={styles.message}>{message}</Text>
             </View>
         </Page>
     </Document>
