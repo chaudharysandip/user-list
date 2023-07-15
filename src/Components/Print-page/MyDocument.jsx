@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
+import printImage from "./../../Assets/Images/user-1.jpg";
 
 // Create styles
 const styles = StyleSheet.create({
@@ -17,13 +18,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#f9f0ff',
         borderRadius: "15px",
     },
-    bg: {
-        backgroundColor: "red",
-        height: "100px",
-        width: "100px",
-        borderRadius: "50%",
-        margin: "0 auto 20px",
-    },
     name: {
         fontSize: "32px",
         marginBottom: 10,
@@ -31,15 +25,19 @@ const styles = StyleSheet.create({
     position: {
         fontSize: "18px",
         color: "#434343",
-        marginBottom: 10,
+        marginBottom: 20,
     },
     message: {
         fontSize: "16px",
         color: "#73738c",
+        lineHeight: 1.7,
     },
     image: {
-        width: 200,  // Adjust the width as needed
-        height: 200, // Adjust the height as needed
+        width: 150,  // Adjust the width as needed
+        height: 150, // Adjust the height as needed
+        objectFit: "cover",
+        borderRadius: "50%",
+        margin: "0 auto 20px",
     },
 });
 
@@ -48,9 +46,7 @@ const MyDocument = ({ name, position, message, image }) => (
     <Document>
         <Page size="A4" style={styles.page}>
             <View style={styles.section}>
-                <Image src={image} />
-                <Text style={styles.bg}>
-                </Text>
+                {<Image src={{ uri: printImage, method: 'GET', headers: {}, body: '' }} style={styles.image} />}
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.position}>{position}</Text>
                 <Text style={styles.message}>{message}</Text>

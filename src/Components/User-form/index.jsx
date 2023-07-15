@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Container, Grid, Typography, Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { makeStyles } from '@mui/styles';
@@ -8,17 +8,20 @@ import { userListSchema } from "./../../Utils/Validation";
 import { Formik } from 'formik';
 import toast from "./../../Utils/Notification";
 import { ToastContainer } from 'react-toastify';
-import ImageInput from '../ImageInput';
 import { storage } from "./../../Utils/Firebase";
-import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: theme.spacing(20, 0, 0),
+        padding: theme.spacing(10, 0, 20),
         "& .form-holder": {
             maxWidth: "600px",
             background: "#fff",
             boxShadow: theme.shadows[1],
+            "& .title": {
+                fontSize: theme.typography.h2,
+                fontWeight: theme.typography.fontWeightBold,
+            },
             "& .MuiButtonBase-root": {
                 position: "absolute",
                 bottom: 0,
@@ -95,6 +98,9 @@ const UserForm = () => {
             <Container>
                 <Typography component="div" className="form-holder" margin="0 auto" p={5} position="relative"
                     sx={{ borderRadius: 3 }}>
+                    <Typography variant='h1' className='title' mb={3}>
+                        Create User
+                    </Typography>
                     <Formik
                         initialValues={{ name: '', position: '', message: '', image: '' }}
                         validationSchema={userListSchema}

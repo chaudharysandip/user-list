@@ -13,6 +13,16 @@ li {
 a {
   text-decoration: none;
 }
+body {
+  background: linear-gradient(
+    to top,
+    transparent,
+    transparent,
+    #2ec4b6,
+    #e5fffd,
+    transparent 100%
+  );
+}
 
 body,
 .MuiTypography-root,
