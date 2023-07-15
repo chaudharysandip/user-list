@@ -39,7 +39,7 @@ const MyDocument = ({ name, position, message, image }) => (
     <Document>
         <Page size="A4" style={styles.page}>
             <View>
-                <Image src={image} cache={false} style={styles.image} />
+                {/* <Image src={image} cache={false} style={styles.image} /> */}
                 <View style={styles.section}>
                     <Text style={styles.name}>{name}</Text>
                     <Text style={styles.position}>{position}</Text>
