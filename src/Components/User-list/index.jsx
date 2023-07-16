@@ -33,6 +33,17 @@ const useStyles = makeStyles((theme) => ({
                     fontWeight: theme.typography.fontWeightBold,
                 },
             },
+            "& .MuiGrid-root": {
+                "& .MuiGrid-item": {
+                    width: "100%",
+                    "& .MuiCard-root": {
+                        transition: theme.transitions.easing.easeOut,
+                        "&:hover": {
+                            transform: "translateY(-10px)",
+                        },
+                    },
+                },
+            },
         },
         "& .no-data": {
             color: theme.palette.secondary.main,
