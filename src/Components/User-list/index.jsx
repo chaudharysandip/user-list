@@ -84,7 +84,6 @@ const UserList = () => {
                         <Typography variant='h1' className='title'>
                             User List
                         </Typography>
-                        {/* <SearchBar userData={userData} /> */}
                     </Typography>
 
                     <Grid container spacing={5}>

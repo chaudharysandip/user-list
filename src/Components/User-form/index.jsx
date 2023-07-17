@@ -10,6 +10,7 @@ import toast from "./../../Utils/Notification";
 import { ToastContainer } from 'react-toastify';
 import { storage } from "./../../Utils/Firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { url } from '../../Utils/Api';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,8 +54,6 @@ const UserForm = () => {
     const [submittingForm, setSubmittingForm] = useState(false);
     const imageRef = useRef(null);
     const classes = useStyles();
-
-    let url = "https://user-list-4de6d-default-rtdb.firebaseio.com/userList.json";
 
     const uploadFile = async (file) => {
         const storageRef = ref(storage, 'images/' + file.name);
