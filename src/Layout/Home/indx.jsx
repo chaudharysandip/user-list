@@ -1,5 +1,6 @@
-import UserForm from "../../Components/User-form";
-import UserList from "../../Components/User-list";
+import { lazy } from "react";
+const UserForm = lazy(() => import("../../Components/User-form"));
+const UserList = lazy(() => import("../../Components/User-list"));
 
 const Home = () => {
     return (
